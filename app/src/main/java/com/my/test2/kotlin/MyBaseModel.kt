@@ -21,15 +21,12 @@ abstract class MyBaseModel<T : ViewBinding?> : BaseModel<T> {
     protected var TAG: String
 
     constructor(binding: T, context: Activity) : super(binding, context) {
-        if (stateBarColor != -1) {
-            Eyes.setStatusBarLightMode(context, context.resources.getColor(stateBarColor))
-        }
+     
         TAG = binding!!.toString()
         MyActivityManager.getInstance().pushActivity(context)
     }
 
-    val stateBarColor: Int
-        get() = R.color.white
+
 
     constructor(binding: T) : super(binding) {
         Eyes.setStatusBarLightMode(context, context!!.resources.getColor(stateBarColor))
@@ -44,9 +41,7 @@ abstract class MyBaseModel<T : ViewBinding?> : BaseModel<T> {
     override fun onKeyDown(keyCode: Int, event: KeyEvent) {}
     override fun toLoginView() {
 
-//        Intent intent = new Intent(context, LoginActivity.class);
-//        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        context.startActivity(intent);
+
     }
 
     protected fun finishAnim() {
