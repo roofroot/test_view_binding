@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.my.test2.databinding.ItemTestBinding;
+import com.my.test2.javabase.BaseAdapter;
 
 import java.util.List;
 

@@ -22,15 +22,43 @@ android {
     viewBinding {
         enabled = true
     }
-    flavorDimensions "color"
+    flavorDimensions "test"
     productFlavors {
-        demo1{
-            dimension "color"
+        flavor1{
+            dimension "test"
         }
-        demo2{
-            dimension "color"
+        flavor2{
+            dimension "test"
         }
     }
+        sourceSets {
+            main {
+                java.srcDirs=[
+                        'src/main/java'
+                ]
+                res.srcDirs =[
+                        'src/main/res'
+                ]
+            }
+            flavor1 {
+                java.srcDirs=[
+                        'src/flavor1/java'
+                ]
+                res.srcDirs = [
+                        'src/flavor1/res'
+                ]
+            }
+            flavor2 {
+                java.srcDirs=[
+                        'src/flavor2/java'
+                ]
+                res.srcDirs = [
+                        'src/flavor2/res'
+                ]
+            }
+        }
+
+
 }
 
 dependencies {
@@ -40,7 +68,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation "androidx.core:core-ktx:+"
+    implementation "androidx.core:core-ktx:1.3.1"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }
